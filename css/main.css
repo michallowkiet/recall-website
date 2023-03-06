@@ -2,8 +2,6 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 :root {
@@ -55,7 +53,7 @@ body {
   align-items: center;
 }
 
-.navbar .logo {
+.logo {
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -91,6 +89,11 @@ h1 {
   display: flex;
   gap: 1rem;
   justify-content: center;
+}
+
+.cta-btns img {
+  width: 100%;
+  height: 6.4rem;
 }
 
 .phone {
@@ -133,4 +136,236 @@ h1 {
   flex-direction: column;
   font-size: 2.6rem;
   gap: 0.2rem;
+}
+
+/* testimonials section */
+
+.testimonial-quote h2 {
+  font-size: 2.8rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+}
+
+.testimonial-quote p {
+  margin-bottom: 2rem;
+}
+
+.testimonial-info .author-pic {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+
+  border-radius: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.author .author-name strong {
+  font-size: 2rem;
+  display: block;
+}
+
+.author .author-name a {
+  color: black;
+}
+
+.author ul {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.author ul svg {
+  width: 3rem;
+}
+
+/* Footer */
+footer {
+  background-color: #ededed;
+  padding: 1.6rem 0;
+  margin-top: 5rem;
+}
+
+footer a {
+  color: black;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.footer-nav ul,
+.secondary-nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.secondary-nav ul {
+  color: #363636;
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+footer .cta-btns {
+  margin-bottom: 3rem;
+  justify-content: left;
+}
+
+/* Media query */
+/* Tablet */
+@media only screen and (min-width: 700px) {
+  .header-cta {
+    display: inherit;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .hero {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .hero .wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 5.1rem;
+    line-height: 110%;
+  }
+
+  .hero .right-col {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    /* overflow: hidden; */
+  }
+
+  .hero .phone {
+    position: absolute;
+    left: 0;
+    width: 500px;
+  }
+
+  .cta-btns {
+    justify-content: left;
+  }
+
+  /* Feature section */
+  .features {
+    transform: skewY(7deg) translateY(-8rem);
+    position: relative;
+  }
+
+  .features .wrapper {
+    transform: skewY(-7deg);
+  }
+
+  .features .wrapper::before {
+    content: "";
+    position: absolute;
+    background: url("../assets/graphic.svg") no-repeat;
+    width: 205px;
+    height: 80px;
+    bottom: 0;
+  }
+
+  .features .wrapper ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6rem;
+    padding: 7rem 0 12rem;
+  }
+
+  .features .wrapper ul li:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  /* Testimonial section */
+  .testimonial-info {
+    margin-top: 3rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+
+  .author,
+  .author-pic {
+    flex: 1;
+  }
+
+  .testimonial-info .author-pic {
+    margin: 0;
+  }
+
+  .author {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+/* Media query */
+/* Desktop */
+@media screen and (min-width: 950px) {
+  .wrapper {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2.6rem;
+  }
+
+  .hero .phone {
+    left: -100px;
+  }
+
+  /* Features section */
+  .features .wrapper ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    height: 500px;
+  }
+
+  .features .wrapper ul li:nth-of-type(2) {
+    align-self: center;
+  }
+
+  .features .wrapper ul li:last-of-type {
+    grid-column: auto;
+    align-self: end;
+  }
+
+  .features strong {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .features p {
+    padding-left: 4.5rem;
+  }
+
+  /* Testimonial section */
+  .testimonial {
+    display: flex;
+    gap: 5rem;
+    margin: 12rem 0;
+  }
+
+  .testimonial-info,
+  .testimonial-quote {
+    flex: 1;
+  }
+
+  .testimonial-quote h2,
+  .testimonial-info {
+    margin-top: 0;
+  }
 }
